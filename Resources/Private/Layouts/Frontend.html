@@ -1,0 +1,14 @@
+<v:asset.style path="EXT:upaint/Resources/Public/Css/Frontend/main.css" />
+<v:asset.script path="EXT:upaint/Resources/Public/Js/frontend.js" />
+<f:if condition="{settings.mode} == 'repeat'">
+    <f:then>
+        <div class="upaint_show_update_button">
+        	<f:render section="Main" />
+        </div>
+    </f:then>
+    <f:else>
+        <div class="upaint_container" data-pluginuid="{pluginUid}">
+            <f:render section="Main" />
+        </div>
+    </f:else>
+</f:if>

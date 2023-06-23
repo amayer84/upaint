@@ -1,0 +1,33 @@
+{namespace vh=Mattgold\Upaint\ViewHelpers}
+<vh:Be.Container>
+    <div class="module">
+        <div class="module-docheader">
+            <div class="typo3-docheader-functions">
+                <div class="module-docheader-bar module-docheader-bar-navigation">
+                    <div class="module-docheader-bar-column-left">
+                        <div class="btn-group btn-group-xs" role="group">
+                            <f:link.action action="categorylist" class="btn btn-default{vh:Be.GetClassNameOnAction(actionName:'categorylist')}">
+                                Kategorien
+                            </f:link.action>
+                            <f:link.action action="questionlist" class="btn btn-default{vh:Be.GetClassNameOnAction(actionName:'questionlist')}">
+                                Fragen
+                            </f:link.action>
+                            <f:link.action action="infoitemlist" class="btn btn-default{vh:Be.GetClassNameOnAction(actionName:'infoitemlist')}">
+                                Info-Items
+                            </f:link.action>
+                            <f:link.action action="importer" class="btn btn-default{vh:Be.GetClassNameOnAction(actionName:'importer')}">
+                                Importer
+                            </f:link.action>
+                        </div>
+                    </div>
+                    <div class="module-docheader-bar-column-right">
+                        <f:be.pagePath />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="module-body powermail-backend">
+            <f:render section="content" />
+        </div>
+    </div>
+</vh:Be.Container>

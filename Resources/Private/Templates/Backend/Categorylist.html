@@ -1,0 +1,30 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" xmlns:vh="http://typo3.org/ns/Mattgold/Upaint/ViewHelpers/Be">
+<f:layout name="Backend" />
+<f:section name="content">
+    <h1>Internationalisierung 2.0</h1>
+    <div class="upaint_tile">
+        <h2>Kategorien</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col" style="width: 30px;">ID</th>
+                    <th scope="col">Name</th>
+                </tr>
+            </thead>
+            <tbody>
+                <f:for each="{categories}" as="category">
+                    <tr>
+                        <th scope="row">{category.uid}</th>
+                        <td>
+                            <a title="Edit" href="{vh:BackendEditLink(tableName:'tx_upaint_domain_model_category',identifier:category.uid)}">
+                                {category.title}
+                            </a>
+                        </td>
+                    </tr>
+                </f:for>
+            </tbody>
+        </table>
+    </div>
+</f:section>
+
+</html>

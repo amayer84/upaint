@@ -1,0 +1,11 @@
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:upaint/Configuration/TsConfig/Page/" extensions="tsconfig">
+
+TCAdefaults {
+	tx_upaint_domain_model_node {
+		pid = 1
+	}
+
+	tx_upaint_domain_model_answerconfig {
+		pid = 1
+	}
+}

@@ -1,0 +1,93 @@
+/* info item */
+.upaint_infoitem::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+/* banner element */
+.upaint_infoitem_banner {
+    padding: 0 0 20px 0;
+}
+
+/* teaser text */
+.upaint_infoitem_teaser.upaint_infoitem_teaser_has_image .upaint_infoitem_teaser_text {
+    width: 100%;
+    display: block;
+    float: left;
+}
+
+.upaint_infoitem_teaser .upaint_infoitem_teaser_image {
+    display: block;
+    width: 100%;
+    margin: 0 0 20px 0;
+    float: left;
+}
+
+/* frontend form */
+.upaint_submit {
+    background-color: #fff;
+    color: #666;
+    margin-bottom: 20px;
+    border-radius: 0;
+    border: 1px solid;
+    cursor: pointer;
+    display: inline-block;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.color-container .upaint_submit {
+    margin-bottom: 0;
+}
+
+.upaint_submit .upaint_submit_update {
+    display: none;
+}
+
+.upaint_show_update_button .upaint_submit .upaint_submit_continue {
+    display: none;
+}
+
+.upaint_show_update_button .upaint_submit .upaint_submit_update {
+    display: inline;
+}
+
+.upaint_button {
+    text-decoration: none;
+    border: none;
+    font-weight: bold;
+    padding: 11px 25px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+    background-color: #fd8900;
+    color: #fff;
+}
+
+.upaint_button.btn-primary:not(:disabled):not(.disabled).active:focus,
+.upaint_button.btn-primary:not(:disabled):not(.disabled):active:focus {
+    box-shadow: 0 0 0 .2rem rgba(0,0,0,.2);
+}
+
+
+.upaint_button:hover,
+.upaint_button.btn-primary:not(:disabled):not(.disabled):active {
+    background-color: #666;
+}
+
+@media (min-width: 768px) {
+    .upaint_infoitem_teaser.upaint_infoitem_teaser_has_image .upaint_infoitem_teaser_text {
+        width: 60%;
+    }
+
+    .upaint_infoitem_teaser .upaint_infoitem_teaser_image {
+        width: calc(40% - 15px);
+        margin: 0 15px 0 0;
+    }
+
+    .upaint_infoitem_teaser.upaint_infoitem_teaser_imagepos_right .upaint_infoitem_teaser_image {
+        float: right;
+        margin: 0 0 0 15px;
+    }
+}

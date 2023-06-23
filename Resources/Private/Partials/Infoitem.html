@@ -1,0 +1,33 @@
+<div class="upaint_infoitem upaint_infoitem_{infoitem.uid}" data-uid="{infoitem.uid}">
+    <f:render section="Banner" arguments="{infoitem: infoitem}" />
+    <f:render section="Full" arguments="{infoitem: infoitem}" />
+</div>
+<f:section name="Banner">
+    <f:if condition="{infoitem.falMediaC}">
+        <div class="upaint_infoitem_banner {f:if(condition: '{infoitem.showPrintC}', then: '', else: 'd-print-none')}">
+            <f:image image="{infoitem.falMediaC}" treatIdAsReference="1" width="992" cropVariant="default_upa" />
+        </div>
+    </f:if>
+</f:section>
+<f:section name="Full">
+    <f:if condition="{settings.singlelayout} == 'button'">
+        <f:then>
+            <a class="btn btn-primary upaint_button btn-block" href="{f:uri.typolink(parameter: '{infoitem.buttonLink}')}" role="button">{infoitem.buttonTitle} <i class="fas fa-chevron-right"></i></a>
+        </f:then>
+        <f:else>
+            <div class="upaint_infoitem_teaser upaint_infoitem_teaser_imagepos_{infoitem.imageposB} {f:if(condition: '{infoitem.falMediaD.0}', then: 'upaint_infoitem_teaser_has_image')}">
+                <f:if condition="{infoitem.falMediaD}">
+                    <div class="upaint_infoitem_teaser_image {f:if(condition: '{infoitem.showPrintD}', then: '', else: 'd-print-none')}">
+                        <f:image image="{infoitem.falMediaD}" treatIdAsReference="1" width="992" cropVariant="default_upa" />
+                    </div>
+                </f:if>
+                <f:if condition="{infoitem.mainTitle}">
+                    <h2>{infoitem.mainTitle}</h2>
+                </f:if>
+                <div class="upaint_infoitem_teaser_text">
+                    {infoitem.longDescription -> f:format.html()}
+                </div>
+            </div>
+        </f:else>
+    </f:if>
+</f:section>

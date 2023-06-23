@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" xmlns:v="http://typo3.org/ns/FluidTYPO3/Vhs/ViewHelpers" xmlns:vh="http://typo3.org/ns/Mattgold/Upaint/ViewHelpers/Be">
+<f:layout name="Backend" />
+<f:section name="content">
+    <h1>Internationalisierung 2.0</h1>
+    <h2>Datensatz importieren</h2>
+    <f:if condition="{success}">
+        <div class="alert alert-success" role="alert">
+            Der Datensatz wurde erfolgreich importiert.
+        </div>
+    </f:if>
+    <div class="form-group">
+        <f:form action="importer">
+            <label for="import_uid">UID des Inhaltselements</label>
+            <f:form.textfield name="uid" id="import_uid" class="form-control" style="margin-bottom: 5px" />
+            <button type="submit" class="btn btn-primary">Importieren</button>
+        </f:form>
+    </div>
+</f:section>
+
+</html>

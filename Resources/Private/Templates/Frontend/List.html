@@ -1,0 +1,65 @@
+<f:layout name="Frontend" />
+<f:section name="Main">
+    <f:if condition="{settings.mode} == 'simple' && {settings.infoitem}">
+        <f:for each="{infoitems}" as="infoitem">
+            <f:render partial="Infoitem" arguments="{infoitem: infoitem, singlelayout: settings.singlelayout}" />
+        </f:for>
+    </f:if>
+    <f:if condition="{settings.mode} == 'advanced'">
+        <f:for each="{startNodes}" as="startnode">
+            <span class="d-none upaint_startnode" data-uid="{startnode}"></span>
+        </f:for>
+        <f:for each="{nodes}" as="node">
+            <span class="d-none upaint_node upaint_node_{node.uid}" data-uid="{node.uid}" data-question="{node.question}"></span>
+        </f:for>
+        <f:for each="{questions}" as="question">
+            <span class="d-none upaint_question upaint_question_{question.uid}" data-uid="{question.uid}" data-title="{question.title}"></span>
+        </f:for>
+        <f:for each="{answerconfigs}" as="answerconfig">
+            <span class="d-none upaint_answerconfig upaint_answerconfig_{answerconfig.uid} upaint_answerconfig_node_{answerconfig.node} upaint_answerconfig_node_{answerconfig.node}_{answerconfig.answer}" data-uid="{answerconfig.uid}" data-node="{answerconfig.node}" data-answer="{answerconfig.answer}" data-nextnode="{answerconfig.nextnode}" data-infoitems="{answerconfig.infoitems}"></span>
+        </f:for>
+        <f:for each="{answers}" as="answer">
+            <span class="d-none upaint_answer upaint_answer_{answer.uid}" data-uid="{answer.uid}" data-title="{answer.title}"></span>
+        </f:for>
+        <f:for each="{session}" as="session_entry" key="session_key">
+            <span class="d-none upaint_session upaint_session_{session_key}" data-uid="{session_entry}"></span>
+        </f:for>
+        <f:if condition="{settings.single}">
+            <span class="d-none upaint_plugin_mixed_mode"></span>
+        </f:if>
+        <f:if condition="{settings.single}">
+            <span class="d-none upaint_single_uri" data-uri="{f:uri.action(action: 'list', pageUid: '{settings.single}', arguments: '{\'token\': \'{token}\'}')}">
+                {f:uri.action(action: 'list', pageUid: '{settings.single}', arguments: '{\'token\': \'{token}\'}')}
+            </span>
+        </f:if>
+        <div class="upaint_formstage"></div>
+        <f:if condition="{settings.single}">
+            <div class="upaint_submit d-none" data-autosubmit="1">
+                <span class="upaint_submit_continue"><f:translate key="continue" /></span>
+                <span class="upaint_submit_update"><f:translate key="update" /></span>
+            </div>
+        </f:if>
+        <div class="upaint_infoitem_dropzone"></div>
+        <div class="upaint_infoitem_pool d-none">
+            <f:for each="{infoitems}" as="infoitem">
+                <div class="upaint_infoitem_pool_item upaint_infoitem_pool_item_{infoitem.uid}" data-uid="{infoitem.uid}">
+                    <f:comment>
+                        <f:render partial="Infoitem" arguments="{infoitem: infoitem, singlelayout: 'full'}" />
+                    </f:comment>
+                </div>
+            </f:for>
+        </div>
+    </f:if>
+    <f:if condition="{settings.mode} == 'mixed'">
+        <f:for each="{infoitem_pool}" as="infoitem">
+            <f:for each="{infoitems}" as="possible_infoitem">
+                <f:if condition="{infoitem.uid} == {possible_infoitem}">
+                    <f:render partial="Infoitem" arguments="{infoitem: infoitem, singlelayout: 'full'}" />
+                </f:if>
+            </f:for>
+        </f:for>
+    </f:if>
+    <f:if condition="{settings.mode} == 'repeat'">
+        <v:content.render contentUids="{0: '{settings.plugin}'}"/>
+    </f:if>
+</f:section>

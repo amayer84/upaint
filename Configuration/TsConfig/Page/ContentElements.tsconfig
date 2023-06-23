@@ -1,0 +1,13 @@
+mod.wizards.newContentElement.wizardItems.plugins {
+    elements {
+        upaint {
+            iconIdentifier = extension-upaint
+            title = Internationalisierung 2.0
+            description = Zur Darstellung von interaktiven Abläufen und Informationselementen
+            tt_content_defValues {
+                CType = list
+                list_type = upaint_pi1
+            }
+        }
+    }
+}

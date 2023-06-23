@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<xliff version="1.0">
+	<file source-language="en" target-language="de" datatype="plaintext" original="messages" date="2019-08-15T12:00:00Z" product-name="publications">
+		<header/>
+		<body>
+			<trans-unit id="mlang_tabs_tab">
+				<source>INT 2.0</source>
+				<target state="translated">INT 2.0</target>
+			</trans-unit>
+			<trans-unit id="import_uid">
+				<source>Import UID</source>
+				<target state="translated">Import-UID</target>
+			</trans-unit>
+			<trans-unit id="answer">
+				<source>Answer (INT 2.0)</source>
+				<target state="translated">Antwort (INT 2.0)</target>
+			</trans-unit>
+			<trans-unit id="answerconfig">
+				<source>Answerconfig (INT 2.0)</source>
+				<target state="translated">Antwortknoten (INT 2.0)</target>
+			</trans-unit>
+			<trans-unit id="category">
+				<source>Category (INT 2.0)</source>
+				<target state="translated">Kategorie (INT 2.0)</target>
+			</trans-unit>
+			<trans-unit id="infoitem">
+				<source>Info item (INT 2.0)</source>
+				<target state="translated">Info-Item (INT 2.0)</target>
+			</trans-unit>
+			<trans-unit id="node">
+				<source>Node (INT 2.0)</source>
+				<target state="translated">Frageknoten (INT 2.0)</target>
+			</trans-unit>
+			<trans-unit id="question">
+				<source>Question (INT 2.0)</source>
+				<target state="translated">Frage (INT 2.0)</target>
+			</trans-unit>
+			<trans-unit id="session">
+				<source>Session (INT 2.0)</source>
+				<target state="translated">Session (INT 2.0)</target>
+			</trans-unit>
+		</body>
+	</file>
+</xliff>

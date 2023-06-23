@@ -1,0 +1,103 @@
+<f:be.link class="upaint_export_button" target="_blank" route="web_UpaintM1" parameters="{tx_upaint_web_upaintm1: {uid: '{pluginUid}', action: 'exporter'}}">Export der Plugin-Konfiguration (CSV-Datei)</f:be.link>
+
+<f:if condition="{deadlock}">
+    <div class="alert alert-danger" role="alert">
+        Es gibt eine Endlosschleife in der Konfiguration.
+    </div>
+</f:if>
+<div class="alert alert-info" role="alert">
+    Änderungen sind erst nach dem Speichern sichtbar.
+</div>
+<f:for each="{infoitems}" as="infoitem">
+    <div class="upaint_paths_item">
+        <h2>{infoitem.title} ({infoitem.uid})</h2>
+        <div class="upaint_paths_item_text">
+            <f:for each="{qa}" as="qaentry" key="qakey">
+                <f:if condition="{qakey} == {infoitem.uid}">
+                    <f:for each="{qaentry}" as="qasingle">
+                        <div class="upaint_paths_item_path">
+                            <v:variable.set name="q" value="{questions.{qasingle.q}}" />
+                            <v:variable.set name="a" value="{answers.{qasingle.a}}" />
+                            <div class="upaint_paths_item_path_q">
+                                {q.title}
+                            </div>
+                            <div class="upaint_paths_item_path_a">
+                                {a.title}
+                            </div>
+                        </div>
+                    </f:for>
+                </f:if>
+            </f:for>
+        </div>
+    </div>
+</f:for>
+<f:if condition="{unusedInfoitems}">
+    <f:for each="{unusedInfoitems}" as="unusedInfoitem">
+        <div class="upaint_paths_item upaint_paths_item_unused">
+            <h2>Unbenutztes Info-Item: "{unusedInfoitem.title}"</h2> 
+        </div>
+    </f:for>
+</f:if>
+<style>
+
+.upaint_export_button {
+    display: inline-block;
+    color: #000;
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 5px 15px;
+    background-color: #fff;
+    margin-bottom: 15px;
+}
+
+.upaint_paths_item {
+    margin-bottom: 5px;
+    box-shadow: 0 2px 0 rgba(0, 0, 0, .1);
+}
+
+.upaint_paths_item h2 {
+    color: #5a5a5a;
+    background-color: #ddd;
+    border-color: #ccc;
+    border-top-right-radius: 2px;
+    border-top-left-radius: 2px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.upaint_paths_item_unused h2 {
+    border: none;
+    background-color: #c83c3c;
+    color: #fff;
+    border-radius: 2px;
+}
+
+.upaint_paths_item_text {
+    color: #000;
+    background-color: #fff;
+    border-color: #ccc;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 0;
+    font-size: 12px;
+    font-weight: normal;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 2px;
+}
+
+.upaint_paths_item_path {
+    margin-bottom: 15px;
+}
+
+.upaint_paths_item_path:last-child {
+    margin-bottom: 0;
+}
+
+.upaint_paths_item_path_q {
+    font-weight: bold;
+}
+</style>
